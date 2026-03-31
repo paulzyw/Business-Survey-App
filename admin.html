@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <header class="header">
+            <h1>Admin Dashboard</h1>
+            <p>Survey Responses Overview</p>
+        </header>
+
+        <div id="loginSection" class="form-wrapper">
+            <div class="form-card">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="password">Admin Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <button type="submit">Login</button>
+                    <div id="loginError" class="hidden error-message">Incorrect password</div>
+                </form>
+            </div>
+        </div>
+
+        <div id="dashboardSection" class="hidden dashboard-wrapper">
+            <div class="stats-card">
+                <h2>Analytics Summary</h2>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <h3>Total Responses</h3>
+                        <p id="totalResponses">0</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Q1 (Yes)</h3>
+                        <p id="q1Yes">0%</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Q2 (Yes)</h3>
+                        <p id="q2Yes">0%</p>
+                    </div>
+                </div>
+                <div class="stat-box full-width">
+                    <h3>Q3 Distribution</h3>
+                    <p id="q3Dist">Product: 0% | Marketing: 0% | Efficiency: 0%</p>
+                </div>
+            </div>
+
+            <div class="table-card">
+                <h2>All Responses</h2>
+                <div class="table-responsive">
+                    <table id="responsesTable">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Function</th>
+                                <th>Size ($)</th>
+                                <th>Q1</th>
+                                <th>Q2</th>
+                                <th>Q3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Rows will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load Supabase JS from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="admin.js"></script>
+</body>
+</html>

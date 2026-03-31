@@ -1,0 +1,5 @@
+{
+  "name": "Survey Application",
+  "description": "A minimal web-based survey application with Wasmer.io frontend and Supabase backend.",
+  "requestFramePermissions": []
+}

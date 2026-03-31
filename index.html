@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <header class="header">
+            <h1>Survey Form</h1>
+            <p>Thank you for taking time to let us know what you need.</p>
+        </header>
+
+        <div class="form-wrapper">
+            <div class="form-accent"></div>
+            <div class="form-card">
+                <form id="surveyForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="function">Function</label>
+                            <input type="text" id="function" name="function" placeholder="Your role/function" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="businessSize">Business Size ($)</label>
+                            <input type="number" id="businessSize" name="businessSize" placeholder="e.g. 10000" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Do you plan to build website for your business in order to accelerate business growth?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="q1" value="Yes" required> Yes</label>
+                            <label><input type="radio" name="q1" value="No"> No</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Are you willing to pay for third-party professional service provider to help you build and host your website?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="q2" value="Yes" required> Yes</label>
+                            <label><input type="radio" name="q2" value="No"> No</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>What is primary challenge you are facing in driving business growth?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="q3" value="Product" required> Product</label>
+                            <label><input type="radio" name="q3" value="Marketing"> Marketing</label>
+                            <label><input type="radio" name="q3" value="Efficiency"> Efficiency</label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" id="submitBtn">Submit Survey</button>
+                    </div>
+
+                    <div id="successMessage" class="hidden success-message">
+                        Thank you for submitting your survey.
+                    </div>
+                    <div id="errorMessage" class="hidden error-message"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load Supabase JS from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
+
