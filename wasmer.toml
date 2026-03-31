@@ -7,7 +7,7 @@ description = "Survey Application"
 "wasmer/static-web-server" = "^1"
 
 [fs]
-public = "/"
+public = "/dist"
 
 [[command]]
 name = "script"
