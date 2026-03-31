@@ -1,0 +1,18 @@
+[package]
+name = "your-github-username/survey-app"
+version = "0.1.0"
+description = "Survey Application"
+
+[dependencies]
+"wasmer/static-web-server" = "^1"
+
+[fs]
+public = "/"
+
+[[command]]
+name = "script"
+module = "wasmer/static-web-server:webserver"
+runner = "https://webc.org/runner/wasi"
+
+[command.annotations.wasi]
+env = ["SERVER_PORT=8080", "ROOT=/public"]
